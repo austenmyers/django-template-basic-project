@@ -23,3 +23,9 @@
         - <code>DEBUG=True</code>
         - <code>SECRET_KEY=some_string</code>
         - <code>DATABASE_URL=sqlite:///db.sqlite3</code>
+
+## To do
+
+- Migrate code to repo
+- Update Views to use viewsets
+- Implement django-rest-framework

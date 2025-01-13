@@ -1,0 +1,10 @@
+header {
+    display: flex;
+    border: 1px solid white;
+    justify-content: space-between;
+    margin: 2%;
+    padding: 2%;
+}
+header>nav {
+    align-self: center;
+}

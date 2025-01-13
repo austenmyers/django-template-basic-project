@@ -1,0 +1,12 @@
+{% block form %}
+
+    <div class="form">
+        <h2>{{ form_name }}</h2>
+        <form method="POST">
+            {{ form }}
+            {% csrf_token %}
+            <button type="submit">{{ button_text }}</button>
+        </form>
+    </div>
+
+{% endblock form %}

@@ -9,6 +9,7 @@ default_apps = [
 
 project_apps = [
     'home',
+    'users',
 ]
 
 packages = []

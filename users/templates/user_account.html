@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="user">
+        {% if profile.display_name %}
+            <h2>Hello, {{ profile.display_name }}</h2>
+        {% elif profile.first_name %}
+            <h2>Hello, {{ profile.first_name }}</h2>
+        {% else %}
+            <h2>Hello, {{ user.username }}</h2>
+        {% endif %}
+        <div class="user-account">
+            <h3>Account Details</h3>
+            <div class="username">
+                <span>Username: </span>
+                <span>{{ user.username }}</span>
+            </div>
+            <div class="email">
+                <span>Email: </span>
+                <span>{{ user.email }}</span>
+            </div>
+            <div class="joined">
+                <span>Joined On: </span>
+                <span>{{ user.date_joined }}</span>
+            </div>
+        </div>
+
+        <div class="user-profile">
+            <h3>Profile</h3>
+            <div class="profile-picture">
+                {% if profile.profile_picture %}
+                    <img class="profile-picture" src="{{ profile.profile_picture.url }}" alt="">
+                {% endif %}
+            </div>
+            <div class="names">
+                <div class="first-name">
+                    <span>First Name: </span>
+                    <span>{{ profile.first_name }}</span>
+                </div>
+                <div class="middle-name">
+                    <span>Middle Name: </span>
+                    <span>{{ profile.middle_name }}</span>
+                </div>
+                <div class="last-name">
+                    <span>Last Name: </span>
+                    <span>{{ profile.last_name }}</span>
+                </div>
+                <div class="display-name">
+                    <span>Display Name: </span>
+                    <span>{{ profile.display_name }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="update-link">
+            <a href="{% url "user-update" user.username %}">Update Account Information</a>
+        </div>
+    </div>
+
+{% endblock content %}

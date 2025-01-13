@@ -1,0 +1,21 @@
+div.user {
+    border: 1px solid white;
+    width: 100%;
+    padding: 2%;
+}
+div.user>div {
+    border: 1px solid white;
+    padding: 2%;
+}
+div.user-account>div {
+    text-align: start;
+    padding: 2%;
+}
+div.user-profile>div {
+    text-align: start;
+    padding: 2%;
+}
+img.profile-picture {
+    border-radius: 50%;
+    max-width: 10%;
+}
