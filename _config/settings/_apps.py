@@ -12,7 +12,9 @@ project_apps = [
     'users',
 ]
 
-packages = []
+packages = [
+    'rest_framework',
+]
 
 INSTALLED_APPS = project_apps + packages + default_apps
 

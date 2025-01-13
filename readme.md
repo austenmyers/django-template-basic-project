@@ -26,6 +26,5 @@
 
 ## To do
 
-- Migrate code to repo
-- Update Views to use viewsets
 - Implement django-rest-framework
+- Update styles using Bootstrap
