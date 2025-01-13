@@ -1,11 +1,7 @@
 from django.shortcuts import render
-from django.utils import timezone
+from tools import context
 
 
 def home(request):
-    context = {
-        'title': 'New Project',
-        'subtitle': 'Content Title',
-        'year': timezone.now().year,
-    }
+
     return render(request, 'home.html', context)

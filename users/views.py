@@ -2,16 +2,9 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 from django.shortcuts import redirect, render
-from django.utils import timezone
-
 from .forms import UserAccountCreationForm, UserAccountUpdateForm, UserProfileUpdateForm
+from tools import context
 
-
-context = {
-    'title': 'New Project',
-    'subtitle': 'Content Title',
-    'year': timezone.now().year,
-}
 
 def register(request):
     context['form_name'] = 'Register'
