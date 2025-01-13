@@ -3,10 +3,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 from django.shortcuts import redirect, render
 from .forms import UserAccountCreationForm, UserAccountUpdateForm, UserProfileUpdateForm
-from tools import context
+from utilities.context import get_context
 
 
 def register(request):
+    context = get_context()
     context['form_name'] = 'Register'
     context['form'] = UserAccountCreationForm()
     context['button_text'] = 'Register'
@@ -20,6 +21,7 @@ def register(request):
     return render(request, 'form_page.html', context)
 
 def login(request):
+    context = get_context()
     context['form_name'] = 'Login'
     context['form'] = AuthenticationForm()
     context['button_text'] = 'Login'
@@ -50,12 +52,14 @@ def logout(request):
 
 @login_required
 def user_account(request, username):
+    context = get_context()
     profile = request.user.get_user_profile()
     context['profile'] = profile
     return render(request, 'user_account.html', context)
 
 @login_required
 def user_update(request, username):
+    context = get_context()
     context['form_name'] = 'Update User Details'
     context['account_form'] = UserAccountUpdateForm(instance=request.user)
     context['profile_form'] = UserProfileUpdateForm(instance=request.user.get_user_profile())

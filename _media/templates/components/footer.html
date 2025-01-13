@@ -1,12 +1,18 @@
-{% block footer %}
-    <footer class="container-fluid">
-        <div class="row align-items-center m-4 p-4 border-top">
-            <div class="col">
-                <span>&copy; Austen Myers {{ year }}</span>
-            </div>
-            <div class="col text-end">
-                <a href="{% url "admin:login" %}">Admin</a>
-            </div>
+<footer class="container-fluid">
+    <div class="row align-items-center mx-4 mt-4 px-4 pt-4 border-top">
+        <div class="col">
+            <a href="">&copy; {{ site_data.developer|title }} {{ site_data.year }}</a>
         </div>
-    </footer>
-{% endblock footer %}
+        <div class="col text-end">
+            <a href="{% url "admin:login" %}">Admin</a>
+        </div>
+    </div>
+    <div class="row align-items-center mx-4 mt-2 px-4 pt-2 pb-4">
+        <div class="col text-start">
+            <a href="">{{ contact.phone }}</a>
+        </div>
+        <div class="col text-end">
+            <a href="">{{ contact.email }}</a>
+        </div>
+    </div>
+</footer>

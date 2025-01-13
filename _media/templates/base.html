@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>{{ title|title }}</title>
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
     {% include "components/header.html" %}
+    {% include "components/navbar.html" %}
     <div class="container-fluid text-center">
         {% block content %}{% endblock content %}
     </div>

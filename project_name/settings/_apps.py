@@ -8,6 +8,7 @@ default_apps = [
 ]
 
 project_apps = [
+    'utilities',
     'home',
     'users',
 ]

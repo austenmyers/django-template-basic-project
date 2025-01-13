@@ -1,15 +1,13 @@
-{% block form %}
-
 <div class="d-flex justify-content-center">
     <form method="POST" class="w-50 border rounded-3 p-4">
         <div class="d-flex justify-content-center">
-            <h2 class="w-50 border-bottom">{{ form_name }}</h2>
+            <h2 class="w-50 border-bottom">{{ form_name|title }}</h2>
         </div>
         {% csrf_token %}
         {% for field in form %}
             <div class="control-group p-4">
                 <label class="control-label">
-                    {{ field.label }}
+                    {{ field.label|title }}
                 </label>
                 <div class="controls">
                     {{ field }}
@@ -21,9 +19,6 @@
                 </div>
             </div>
         {% endfor %}
-        <button class="btn btn-danger mt-2" type="submit">{{ button_text }}</button>
+        <button class="btn btn-danger mt-2" type="submit">{{ button_text|title }}</button>
     </form>
 </div>
-
-
-{% endblock form %}

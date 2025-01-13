@@ -1,0 +1,11 @@
+<nav class="navbar container-fluid">
+    <div class="row w-100 mx-4 p-4 mt-0 text-center border-bottom">
+        {% for item in site_data.nav %}
+            <li class="col">
+                <a class="navbar-brand" href="{% url item  %}">
+                    {{ item|title }}
+                </a>
+            </li>
+        {% endfor %}
+    </div>
+</nav>
