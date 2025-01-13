@@ -1,6 +1,12 @@
 {% block footer %}
-    <footer>
-        <span>&copy; Austen Myers {{ year }}</span>
-        <a href="{% url "admin:login" %}">Admin</a>
+    <footer class="container-fluid">
+        <div class="row align-items-center m-4 p-4 border-top">
+            <div class="col">
+                <span>&copy; Austen Myers {{ year }}</span>
+            </div>
+            <div class="col text-end">
+                <a href="{% url "admin:login" %}">Admin</a>
+            </div>
+        </div>
     </footer>
 {% endblock footer %}

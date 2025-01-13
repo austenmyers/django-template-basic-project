@@ -2,42 +2,40 @@
 
 {% block content %}
 
-    <div class="form">
-        <h2>{{ form_name }}</h2>
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="form-row">
-                <label>Username: </label>
-                {{ account_form.username }}
-            </div>
-            <div class="form-row">
-                <label>Email:</label>
-                {{ account_form.email }}
-            </div>
-            <div class="form-row">
-                <label>Profile Picture:</label>
-                <div class="profile-pic-field">
-                    {{ profile_form.profile_picture }}
+    <h2>{{ form_name }}</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in account_form %}
+            <div class="control-group">
+                <label class="control-label">
+                    {{ field.label }}
+                </label>
+                <div class="controls">
+                    {{ field }}
+                    {% if field.help_text %}
+                        <p class="help-inline">
+                            <small>{{ field.help_text }}</small>
+                        </p>
+                    {% endif %}
                 </div>
             </div>
-            <div class="form-row">
-                <label>First Name:</label>
-                {{ profile_form.first_name }}
+        {% endfor %}
+        {% for field in profile_form %}
+            <div class="control-group">
+                <label class="control-label">
+                    {{ field.label }}
+                </label>
+                <div class="controls">
+                    {{ field }}
+                    {% if field.help_text %}
+                        <p class="help-inline">
+                            <small>{{ field.help_text }}</small>
+                        </p>
+                    {% endif %}
+                </div>
             </div>
-            <div class="form-row">
-                <label>Middle Name:</label>
-                {{ profile_form.middle_name }}
-            </div>
-            <div class="form-row">
-                <label>Last Name:</label>
-                {{ profile_form.last_name }}
-            </div>
-            <div class="form-row">
-                <label>Display Name:</label>
-                {{ profile_form.display_name }}
-            </div>
-            <button type="submit">{{ button_text }}</button>
-        </form>
-    </div>
+        {% endfor %}
+        <button class="btn btn-danger" type="submit">{{ button_text }}</button>
+    </form>
 
 {% endblock content %}

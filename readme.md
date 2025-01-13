@@ -8,8 +8,7 @@
 
 ## Requirements
 
-- django
-- django-environ
+- [requirements.txt](./requirements.txt)
 
 ## Usage
 
@@ -26,5 +25,4 @@
 
 ## To do
 
-- Implement django-rest-framework
-- Update styles using Bootstrap
+- refactor templates

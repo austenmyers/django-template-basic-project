@@ -1,59 +1,72 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="user">
-        {% if profile.display_name %}
-            <h2>Hello, {{ profile.display_name }}</h2>
-        {% elif profile.first_name %}
-            <h2>Hello, {{ profile.first_name }}</h2>
-        {% else %}
-            <h2>Hello, {{ user.username }}</h2>
-        {% endif %}
-        <div class="user-account">
-            <h3>Account Details</h3>
-            <div class="username">
-                <span>Username: </span>
-                <span>{{ user.username }}</span>
-            </div>
-            <div class="email">
-                <span>Email: </span>
-                <span>{{ user.email }}</span>
-            </div>
-            <div class="joined">
-                <span>Joined On: </span>
-                <span>{{ user.date_joined }}</span>
-            </div>
-        </div>
 
-        <div class="user-profile">
-            <h3>Profile</h3>
-            <div class="profile-picture">
-                {% if profile.profile_picture %}
-                    <img class="profile-picture" src="{{ profile.profile_picture.url }}" alt="">
-                {% endif %}
-            </div>
-            <div class="names">
-                <div class="first-name">
-                    <span>First Name: </span>
+    <div class="row align-items-center m-4 p-4 ">
+        <div class="col-2">
+            {% if profile.profile_picture %}
+                <img class="img-fluid rounded-circle" src="{{ profile.profile_picture.url }}" alt="">
+            {% endif %}
+        </div>
+        <div class="col text-start">
+            {% if profile.display_name %}
+            <h2>Hello, {{ profile.display_name }}</h2>
+            {% elif profile.first_name %}
+            <h2>Hello, {{ profile.first_name }}</h2>
+            {% else %}
+            <h2>Hello, {{ user.username }}</h2>
+            {% endif %}
+            <span>Username: </span>
+            <span>{{ user.username }}</span>
+            <br>
+            <span>Email: </span>
+            <span>{{ user.email }}</span>
+            <br>
+            <span>Joined On: </span>
+            <span>{{ user.date_joined }}</span>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+            <h2>Profile</h2>
+            <div class="row align-items-center">
+                <div class="col-3 text-end">
+                    <h4>First Name: </h4>
+                </div>
+                <div class="col text-start">
                     <span>{{ profile.first_name }}</span>
                 </div>
-                <div class="middle-name">
-                    <span>Middle Name: </span>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-3 text-end">
+                    <h4>Middle Name: </h4>
+                </div>
+                <div class="col text-start">
                     <span>{{ profile.middle_name }}</span>
                 </div>
-                <div class="last-name">
-                    <span>Last Name: </span>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-3 text-end">
+                    <h4>Last Name: </h4>
+                </div>
+                <div class="col text-start">
                     <span>{{ profile.last_name }}</span>
                 </div>
-                <div class="display-name">
-                    <span>Display Name: </span>
-                    <span>{{ profile.display_name }}</span>
-                </div>
             </div>
-        </div>
-        <div class="update-link">
-            <a href="{% url "user-update" user.username %}">Update Account Information</a>
-        </div>
+            {% if profile.display_name %}
+                <div class="row align-items-center">
+                    <div class="col-3 text-end">
+                        <h4>Display Name: </h4>
+                    </div>
+                    <div class="col text-start">
+                        <span>{{ profile.display_name }}</span>
+                    </div>
+                </div>
+            {% endif %}
+    </div>
+
+    <div class="row">
+        <a href="{% url "user-update" user.username %}">Update Account Information</a>
     </div>
 
 {% endblock content %}

@@ -14,6 +14,7 @@ project_apps = [
 
 packages = [
     'rest_framework',
+    'bootstrap5',
 ]
 
 INSTALLED_APPS = project_apps + packages + default_apps

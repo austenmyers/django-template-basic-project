@@ -1,28 +1,13 @@
-@import url(./header.css);
-@import url(./content.css);
-@import url(./form.css);
-@import url(./user_account.css);
-@import url(./footer.css);
-
 body {
     background-color: black;
-    color: white;
+    color: #999393;
 }
 
 a {
     text-decoration: none;
-    color: #c42e2e;
+    color: red;
 }
 
-a:hover {
-    color: #c42ebf;
-}
-
-div.profile-pic-field {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-}
-input#profile_picture-clear-id {
-    display: none;
+ul, li {
+    list-style: none !important;
 }
