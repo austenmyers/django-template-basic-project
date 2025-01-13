@@ -1,24 +1,29 @@
 {% block form %}
 
-<h2>{{ form_name }}</h2>
-<form method="POST">
-    {% csrf_token %}
-    {% for field in form %}
-    <div class="control-group p-4">
-        <label class="control-label">
-            {{ field.label }}
-        </label>
-        <div class="controls">
-            {{ field }}
-            {% if field.help_text %}
-                <p class="help-inline">
-                    <small>{{ field.help_text }}</small>
-                </p>
-            {% endif %}
+<div class="d-flex justify-content-center">
+    <form method="POST" class="w-50 border rounded-3 p-4">
+        <div class="d-flex justify-content-center">
+            <h2 class="w-50 border-bottom">{{ form_name }}</h2>
         </div>
-    </div>
-{% endfor %}
-    <button class="btn btn-danger" type="submit">{{ button_text }}</button>
-</form>
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="control-group p-4">
+                <label class="control-label">
+                    {{ field.label }}
+                </label>
+                <div class="controls">
+                    {{ field }}
+                    {% if field.help_text %}
+                        <p class="help-inline">
+                            <small>{{ field.help_text }}</small>
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        <button class="btn btn-danger mt-2" type="submit">{{ button_text }}</button>
+    </form>
+</div>
+
 
 {% endblock form %}

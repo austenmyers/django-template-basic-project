@@ -24,7 +24,7 @@ def register(request):
             user = form.save()
             return redirect('user-login')
 
-    return render(request, 'register.html', context)
+    return render(request, 'form_page.html', context)
 
 def login(request):
     context['form_name'] = 'Login'
@@ -48,11 +48,7 @@ def login(request):
         else:
             context['errors'] = form.error_messages
  
-    return render(
-        request, 
-        'login.html', 
-        context
-    )
+    return render(request, 'form_page.html', context)
 
 @login_required
 def logout(request):

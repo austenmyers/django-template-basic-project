@@ -25,4 +25,4 @@
 
 ## To do
 
-- refactor templates
+- refactor for django template upload

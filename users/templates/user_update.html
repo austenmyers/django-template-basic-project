@@ -2,8 +2,11 @@
 
 {% block content %}
 
-    <h2>{{ form_name }}</h2>
-    <form method="POST" enctype="multipart/form-data">
+<div class="d-flex justify-content-center">
+    <form method="POST" enctype="multipart/form-data" class="w-75 border rounded-3 p-4">
+        <div class="d-flex justify-content-center">
+            <h2 class="w-50 border-bottom">{{ form_name }}</h2>
+        </div>
         {% csrf_token %}
         {% for field in account_form %}
             <div class="control-group">
@@ -35,7 +38,9 @@
                 </div>
             </div>
         {% endfor %}
-        <button class="btn btn-danger" type="submit">{{ button_text }}</button>
+        <button class="btn btn-danger mt-2" type="submit">{{ button_text }}</button>
     </form>
+</div>
+
 
 {% endblock content %}
